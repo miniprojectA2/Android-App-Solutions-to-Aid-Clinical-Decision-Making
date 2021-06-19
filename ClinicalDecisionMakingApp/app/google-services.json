@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "68310235671",
+    "project_id": "cli-dec",
+    "storage_bucket": "cli-dec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68310235671:android:2f657581b6f75c13723a52",
+        "android_client_info": {
+          "package_name": "com.miniproject.clinicaldecisionmakingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68310235671-0osoelcojla1p2t6vsb6pv92n83fdv62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6nveM52mzWoEEvom2-6kHagkCqhDmq30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68310235671-0osoelcojla1p2t6vsb6pv92n83fdv62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
