@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/mix1"
+            android:background="#76A6F0"
             app:popupTheme="@style/Theme.ClinicalDecisionMakingApp.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>

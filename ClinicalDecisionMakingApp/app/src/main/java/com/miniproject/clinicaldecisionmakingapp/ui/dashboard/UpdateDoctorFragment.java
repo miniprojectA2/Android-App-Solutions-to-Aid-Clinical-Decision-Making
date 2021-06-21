@@ -75,6 +75,7 @@ public class UpdateDoctorFragment extends Fragment {
 
                 reference.child(user.getUid()).setValue(doctor);
 
+                Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
                 Fragment fragment = new UpdateDoctorFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

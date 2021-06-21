@@ -26,24 +26,24 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/purple1"
+            android:textColor="#76A6F0"
             android:layout_gravity="center"
-            android:text="Clin-Dec"
+            android:text="VirtuDoctor"
             android:textStyle="bold"
             android:layout_marginTop="40dp"
             android:textSize="40dp"
             android:textAlignment="center"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/sendButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center"
-            android:background="@color/yellow1"
-            android:text="Go to Dashboard"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/sendButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@color/yellow1"-->
+<!--            android:text="Go to Dashboard"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black"/>-->
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

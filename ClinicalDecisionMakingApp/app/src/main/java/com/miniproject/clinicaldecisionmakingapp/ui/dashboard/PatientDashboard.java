@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.miniproject.clinicaldecisionmakingapp.R;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentPatientDashboardBinding;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentRegisterBinding;
+import com.miniproject.clinicaldecisionmakingapp.ui.EvaluationModelFragment;
 
 public class PatientDashboard extends Fragment {
 
@@ -75,35 +76,47 @@ public class PatientDashboard extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+
+        binding.symptompage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new EvaluationModelFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
     }
     public void showAllDetails(String email) {
         final String[] name = new String[1];
-        final String[] age = new String[1];
+//        final String[] age = new String[1];
         final String[] pemail = new String[1];
-        final String[] phone = new String[1];
-        final String[] sex = new String[1];
-        final String[] weight = new String[1];
+//        final String[] phone = new String[1];
+//        final String[] sex = new String[1];
+//        final String[] weight = new String[1];
         reference.orderByChild("patientEmail").equalTo(email).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot datas : snapshot.getChildren()) {
                     name[0] = datas.child("patientName").getValue().toString();
-                    age[0] = datas.child("patientAge").getValue().toString();
+//                    age[0] = datas.child("patientAge").getValue().toString();
                     pemail[0] = datas.child("patientEmail").getValue().toString();
-                    phone[0] = datas.child("patientPhone").getValue().toString();
-                    sex[0] = datas.child("patientSex").getValue().toString();
-                    weight[0] = datas.child("patientWeight").getValue().toString();
+//                    phone[0] = datas.child("patientPhone").getValue().toString();
+//                    sex[0] = datas.child("patientSex").getValue().toString();
+//                    weight[0] = datas.child("patientWeight").getValue().toString();
                 }
 
                 updateHeader(name[0]);
                 updateNavigationBar();
 
                 binding.pName.setText(name[0]);
-                binding.pAge.setText("Age: " + age[0]);
-                binding.pEmail.setText("Email: " + email);
-                binding.pSex.setText("Sex: " + sex[0]);
-                binding.pWeight.setText("Weight: " + weight[0]);
-                binding.pPhone.setText("Phone: " + phone[0]);
+//                binding.pAge.setText("Age: " + age[0]);
+//                binding.pEmail.setText("Email: " + email);
+//                binding.pSex.setText("Sex: " + sex[0]);
+//                binding.pWeight.setText("Weight: " + weight[0]);
+//                binding.pPhone.setText("Phone: " + phone[0]);
             }
 
             @Override

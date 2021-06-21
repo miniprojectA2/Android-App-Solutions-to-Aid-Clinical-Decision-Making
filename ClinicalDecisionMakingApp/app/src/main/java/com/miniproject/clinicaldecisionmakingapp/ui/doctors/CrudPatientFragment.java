@@ -25,6 +25,7 @@ import com.miniproject.clinicaldecisionmakingapp.R;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentCrudPatientBinding;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentUpdatePatientBinding;
 import com.miniproject.clinicaldecisionmakingapp.model.DoctorPatients;
+import com.miniproject.clinicaldecisionmakingapp.ui.EvaluationModelFragment;
 import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.PatientsListsFragment;
 import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.UpdateDoctorFragment;
 
@@ -139,6 +140,18 @@ public class CrudPatientFragment extends Fragment {
                                 }
                             }
                         });
+            }
+        });
+
+        binding.symptompage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new EvaluationModelFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 

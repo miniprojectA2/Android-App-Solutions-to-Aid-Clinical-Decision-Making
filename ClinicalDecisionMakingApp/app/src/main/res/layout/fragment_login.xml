@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:padding="30dp"
     android:background="@color/cardview_light_background"
     tools:context=".ui.login.LoginFragment">
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -20,7 +20,7 @@
             android:layout_marginTop="40dp"
             android:text="Login"
             android:textAlignment="center"
-            android:textColor="@color/design_default_color_secondary_variant"
+            android:textColor="#76A6F0"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -28,11 +28,13 @@
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#76A6F0"
             android:layout_marginTop="70dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/patientemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#EEF3F9"
                 android:hint="Email"
                 android:inputType="text"
                 android:maxLines="1" />
@@ -42,39 +44,39 @@
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#76A6F0"
             app:passwordToggleEnabled="true"
             android:layout_marginTop="20dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/patientpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#EEF3F9"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/loginbutton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:layout_marginLeft="40dp"-->
+<!--            android:layout_marginRight="40dp"-->
+<!--            android:background="@color/yellow1"-->
+<!--            android:text="Login as Patient"-->
+<!--            android:textColor="@color/black"/>-->
 
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:background="@color/yellow1"
-            android:text="Login as Patient"
-            android:textColor="@color/black"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginbutton1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:background="@color/green1"
-            android:text="Login as Doctor"
-            android:textColor="@color/black"/>
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/loginbutton1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:layout_marginLeft="40dp"-->
+<!--            android:layout_marginRight="40dp"-->
+<!--            android:background="@color/green1"-->
+<!--            android:text="Login as Doctor"-->
+<!--            android:textColor="@color/black"/>-->
 
         <!-- ProgressBar for Loading Time -->
         <ProgressBar
@@ -84,25 +86,62 @@
             android:layout_gravity="center"
             android:visibility="gone" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/Register"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/purple_700"
-            android:text="Not a member? Register"
-            android:layout_marginTop="40dp"
-            android:textAlignment="center"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:weightSum="2">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/forgotPassword"
+            <!--Button for updating your course to Firebase-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginbutton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/cursor"
+
+
+                android:text="Login as Patient" />
+
+            <!--Button for deleting our course-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginbutton1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cursor"
+                android:layout_weight="1"
+                android:text="Login as Doctor" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/red"
-            android:text="Forgot Password?"
-            android:layout_marginTop="40dp"
-            android:textAlignment="center"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:weightSum="2">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Register"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#4673B8"
 
+                android:text="Not a member? Register"
+                android:textAlignment="center"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/forgotPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/red"
+                android:text="Forgot Password?"
+                android:textAlignment="center"/>
 
+        </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

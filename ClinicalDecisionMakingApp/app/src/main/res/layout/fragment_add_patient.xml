@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="20dp"
+    android:padding="30dp"
     android:background="@color/cardview_light_background"
     tools:context=".ui.dashboard.AddPatientFragment"
     android:orientation="horizontal">
@@ -35,7 +35,7 @@
                 android:layout_marginTop="40dp"
                 android:text="Add Patient"
                 android:textAlignment="center"
-                android:textColor="@color/design_default_color_secondary_variant"
+                android:textColor="#76A6F0"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -50,6 +50,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Patient Name"
+                    android:background="#EEF3F9"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -65,6 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
+                    android:background="#EEF3F9"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -79,6 +81,7 @@
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#EEF3F9"
                     android:hint="Phone"
                     android:inputType="number"
                     android:maxLines="1" />
@@ -95,12 +98,14 @@
                 android:id="@+id/textInputLayoutAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/patientAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#EEF3F9"
                     android:hint="Age"
                     android:inputType="number"
                     android:maxLines="1" />
@@ -117,6 +122,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Weight"
+                    android:background="#EEF3F9"
                     android:inputType="number"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -136,10 +142,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginTop="20dp"
-                android:background="#81FCBD"
+                android:layout_margin="10dp"
+                android:background="@drawable/greybutton"
                 android:drawableTop="@drawable/ic_baseline_addpa"
                 android:clickable="false"
                 android:text="Add Patient"

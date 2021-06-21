@@ -88,32 +88,32 @@ public class DoctorDashboard extends Fragment {
     }
     public void showAllDetails(String email) {
         final String[] name = new String[1];
-        final String[] age = new String[1];
+//        final String[] age = new String[1];
         final String[] demail = new String[1];
-        final String[] phone = new String[1];
-        final String[] sex = new String[1];
-        final String[] department = new String[1];
+//        final String[] phone = new String[1];
+//        final String[] sex = new String[1];
+//        final String[] department = new String[1];
         reference.orderByChild("doctorEmail").equalTo(email).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot datas : snapshot.getChildren()) {
                     name[0] = datas.child("doctorName").getValue().toString();
-                    age[0] = datas.child("doctorAge").getValue().toString();
+//                    age[0] = datas.child("doctorAge").getValue().toString();
                     demail[0] = datas.child("doctorEmail").getValue().toString();
-                    phone[0] = datas.child("doctorPhone").getValue().toString();
-                    sex[0] = datas.child("doctorSex").getValue().toString();
-                    department[0] = datas.child("department").getValue().toString();
+//                    phone[0] = datas.child("doctorPhone").getValue().toString();
+//                    sex[0] = datas.child("doctorSex").getValue().toString();
+//                    department[0] = datas.child("department").getValue().toString();
                 }
 
                 updateHeader(name[0]);
                 updateNavigationBarDoctor();
 
                 binding.dName.setText(name[0]);
-                binding.dAge.setText("Age: " + age[0]);
-                binding.dEmail.setText("Email: " + email);
-                binding.dSex.setText("Sex: " + sex[0]);
-                binding.dDepartment.setText("Department: " + department[0]);
-                binding.dPhone.setText("Phone: " + phone[0]);
+//                binding.dAge.setText("Age: " + age[0]);
+//                binding.dEmail.setText("Email: " + email);
+//                binding.dSex.setText("Sex: " + sex[0]);
+//                binding.dDepartment.setText("Specialization: " + department[0]);
+//                binding.dPhone.setText("Phone: " + phone[0]);
             }
 
             @Override

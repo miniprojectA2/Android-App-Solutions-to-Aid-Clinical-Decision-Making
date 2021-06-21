@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Clin-Dec</string>
+    <string name="app_name">VirtuDoctor</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -11,7 +11,7 @@
     <string name="menu_register">Register</string>
     <string name="menu_login">Login</string>
     <string name="menu_logout">Logout</string>
-    <string name="menu_update">Update</string>
+    <string name="menu_update">My Profile</string>
     <string name="menu_dashboard">My Dashboard</string>
     <string name="menu_addpatient">Add Patient</string>
     <string name="menu_showpatients">My Patients</string>
@@ -22,6 +22,13 @@
         <item>FEMALE</item>
         <item>TRANSGENDER</item>
         <item>OTHERS</item>
+    </string-array>
+
+    <string-array name="spinner_category">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>

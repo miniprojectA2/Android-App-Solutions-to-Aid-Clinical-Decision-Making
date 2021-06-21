@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="20dp"
+    android:padding="30dp"
     android:background="@color/cardview_light_background"
     tools:context=".ui.register.RegisterFragment"
     android:orientation="horizontal">
@@ -35,7 +35,7 @@
                 android:layout_marginTop="40dp"
                 android:text="Patient Registration"
                 android:textAlignment="center"
-                android:textColor="@color/design_default_color_secondary_variant"
+                android:textColor="#76A6F0"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -43,6 +43,7 @@
                 android:id="@+id/input1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="40dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -51,6 +52,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Patient Name"
                     android:inputType="text"
+                    android:background="#EEF3F9"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,6 +60,7 @@
                 android:id="@+id/textInputLayoutEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -65,6 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
+                    android:background="#EEF3F9"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -73,6 +77,7 @@
                 android:id="@+id/textInputLayoutPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -80,6 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Phone"
+                    android:background="#EEF3F9"
                     android:inputType="number"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,12 +101,14 @@
                 android:id="@+id/textInputLayoutAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/patientAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#EEF3F9"
                     android:hint="Age"
                     android:inputType="number"
                     android:maxLines="1" />
@@ -110,12 +118,14 @@
                 android:id="@+id/textInputLayoutWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/patientWeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#EEF3F9"
                     android:hint="Weight"
                     android:inputType="number"
                     android:maxLines="1" />
@@ -125,6 +135,7 @@
                 android:id="@+id/textInputLayoutPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 app:passwordToggleEnabled="true"
                 android:layout_marginTop="20dp">
                 <com.google.android.material.textfield.TextInputEditText
@@ -133,6 +144,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Create Password"
                     android:inputType="textPassword"
+                    android:background="#EEF3F9"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,11 +159,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/registerPatient"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="#81FCBD"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/greybutton"
                 android:clickable="false"
                 android:text="Register"
                 android:textColor="#000" />
@@ -185,7 +199,7 @@
                 android:layout_marginTop="40dp"
                 android:text="Doctor Registration"
                 android:textAlignment="center"
-                android:textColor="@color/design_default_color_secondary_variant"
+                android:textColor="#76A6F0"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -193,6 +207,7 @@
                 android:id="@+id/input2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="40dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -200,6 +215,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Doctor Name"
+                    android:background="#EEF3F9"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -208,6 +224,7 @@
                 android:id="@+id/textInputLayoutEmail1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -215,6 +232,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
+                    android:background="#EEF3F9"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -223,12 +241,14 @@
                 android:id="@+id/textInputLayoutPhone1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#EEF3F9"
                     android:hint="Phone"
                     android:inputType="number"
                     android:maxLines="1" />
@@ -245,12 +265,14 @@
                 android:id="@+id/textInputLayoutAge1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/doctorAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#EEF3F9"
                     android:hint="Age"
                     android:inputType="number"
                     android:maxLines="1" />
@@ -260,13 +282,15 @@
                 android:id="@+id/textInputLayoutDepartment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/doctorDepartment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Department"
+                    android:background="#EEF3F9"
+                    android:hint="Specialiation"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -275,6 +299,7 @@
                 android:id="@+id/textInputLayoutPassword1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="#76A6F0"
                 app:passwordToggleEnabled="true"
                 android:layout_marginTop="20dp">
                 <com.google.android.material.textfield.TextInputEditText
@@ -282,6 +307,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Create Password"
+                    android:background="#EEF3F9"
                     android:inputType="textPassword"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -297,11 +323,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/registerDoctor"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:background="#81FCBD"
+                android:background="@drawable/greybutton"
                 android:clickable="false"
                 android:text="Register"
                 android:textColor="#000" />
@@ -329,7 +357,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="#81FCBD"
+                android:background="@drawable/lightblue"
                 android:text="Patient Registration"
                 android:textColor="#000" />
             <androidx.appcompat.widget.AppCompatButton
@@ -338,7 +366,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="@color/yellow1"
+                android:background="@drawable/cursor"
                 android:text="Doctor Registration"
                 android:textColor="#000" />
 
