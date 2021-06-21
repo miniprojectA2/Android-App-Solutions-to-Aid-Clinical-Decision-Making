@@ -12,10 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,19 +22,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.miniproject.clinicaldecisionmakingapp.R;
-import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentLoginBinding;
+import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentUpdateDoctorBinding;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentUpdatePatientBinding;
+import com.miniproject.clinicaldecisionmakingapp.model.Doctor;
 import com.miniproject.clinicaldecisionmakingapp.model.Patient;
 
-public class UpdatePatientFragment extends Fragment {
+public class UpdateDoctorFragment extends Fragment {
 
-    FragmentUpdatePatientBinding binding;
-    DatabaseReference reference;
+    FragmentUpdateDoctorBinding binding;
     FirebaseDatabase database;
+    DatabaseReference reference;
 
     ArrayAdapter<CharSequence> adapter;
 
-    public UpdatePatientFragment() {
+    public UpdateDoctorFragment() {
     }
 
     @Override
@@ -49,33 +48,34 @@ public class UpdatePatientFragment extends Fragment {
             System.out.println(user.getUid());
         }
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("Patient");
+        reference = database.getReference("Doctor");
 
 
         showAllDetails(patientEmail);
 
-        binding.updatePatient.setOnClickListener(new View.OnClickListener() {
+        binding.updateDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String patientName = binding.patientName.getText().toString();
-                final String patientEmail = binding.patientEmail.getText().toString();
-                final String phone = binding.phone.getText().toString();
-                final String age = binding.patientAge.getText().toString();
-                final String weight = binding.patientWeight.getText().toString();
-                final String sex = binding.patientSex.getSelectedItem().toString();
+                final String doctorName = binding.doctorName.getText().toString();
+                final String doctorEmail = binding.doctorEmail.getText().toString();
+                final String doctorPhone = binding.phone1.getText().toString();
+                final String doctorAge = binding.doctorAge.getText().toString();
+                final String doctorDepartment = binding.doctorDepartment.getText().toString();
+                final String doctorSex = binding.doctorSex.getSelectedItem().toString();
 
-                Patient patient = new Patient();
-                patient.setPatientName(patientName);
-                patient.setPatientEmail(patientEmail);
-                patient.setPatientPhone(phone);
-                patient.setPatientAge(age);
-                patient.setPatientSex(sex);
-                patient.setPatientWeight(weight);
-                binding.progressBar1.setVisibility(View.VISIBLE);
+                Doctor doctor = new Doctor();
+                doctor.setDoctorName(doctorName);
+                doctor.setDoctorEmail(doctorEmail);
+                doctor.setDepartment(doctorDepartment);
+                doctor.setDoctorAge(doctorAge);
+                doctor.setDoctorSex(doctorSex);
+                doctor.setDoctorPhone(doctorPhone);
 
-                reference.child(user.getUid()).setValue(patient);
+                binding.progressBar2.setVisibility(View.VISIBLE);
 
-                Fragment fragment = new UpdatePatientFragment();
+                reference.child(user.getUid()).setValue(doctor);
+
+                Fragment fragment = new UpdateDoctorFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
@@ -87,35 +87,36 @@ public class UpdatePatientFragment extends Fragment {
     public void showAllDetails(String email) {
         final String[] name = new String[1];
         final String[] age = new String[1];
-        final String[] pemail = new String[1];
+        final String[] demail = new String[1];
         final String[] phone = new String[1];
         final String[] sex = new String[1];
-        final String[] weight = new String[1];
-        reference.orderByChild("patientEmail").equalTo(email).addValueEventListener(new ValueEventListener() {
+        final String[] department = new String[1];
+        reference.orderByChild("doctorEmail").equalTo(email).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot datas : snapshot.getChildren()) {
-                    name[0] = datas.child("patientName").getValue().toString();
-                    age[0] = datas.child("patientAge").getValue().toString();
-                    pemail[0] = datas.child("patientEmail").getValue().toString();
-                    phone[0] = datas.child("patientPhone").getValue().toString();
-                    sex[0] = datas.child("patientSex").getValue().toString();
-                    weight[0] = datas.child("patientWeight").getValue().toString();
+                    name[0] = datas.child("doctorName").getValue().toString();
+                    age[0] = datas.child("doctorAge").getValue().toString();
+                    demail[0] = datas.child("doctorEmail").getValue().toString();
+                    phone[0] = datas.child("doctorPhone").getValue().toString();
+                    sex[0] = datas.child("doctorSex").getValue().toString();
+                    department[0] = datas.child("department").getValue().toString();
                 }
+
 
                 adapter = ArrayAdapter.createFromResource(getContext(), R.array.spinner_sex, android.R.layout.simple_spinner_item);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-                binding.patientSex.setAdapter(adapter);
+                binding.doctorSex.setAdapter(adapter);
 
-                binding.patientName.setText(name[0]);
-                binding.patientAge.setText(age[0]);
-                binding.patientEmail.setText(email);
+                binding.doctorName.setText(name[0]);
+                binding.doctorAge.setText(age[0]);
+                binding.doctorEmail.setText(email);
 
                 int pos = adapter.getPosition(sex[0]);
-                binding.patientSex.setSelection(pos);
+                binding.doctorSex.setSelection(pos);
 
-                binding.patientWeight.setText(weight[0]);
-                binding.phone.setText(phone[0]);
+                binding.doctorDepartment.setText(department[0]);
+                binding.phone1.setText(phone[0]);
             }
 
             @Override
@@ -128,12 +129,13 @@ public class UpdatePatientFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentUpdatePatientBinding.inflate(getLayoutInflater());
+        binding = FragmentUpdateDoctorBinding.inflate(getLayoutInflater());
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         return binding.getRoot();
     }

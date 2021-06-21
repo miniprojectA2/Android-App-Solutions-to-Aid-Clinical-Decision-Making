@@ -6,25 +6,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp"
     android:background="@color/cardview_light_background"
-    tools:context=".ui.dashboard.UpdatePatientFragment"
+    tools:context=".ui.doctors.CrudPatientFragment"
     android:orientation="horizontal">
 
+
     <ScrollView
-        android:id="@+id/upPatient"
+        android:id="@+id/patientReg"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/back1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_back"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Update Profile"
+                android:text="Patient Profile"
                 android:textAlignment="center"
                 android:textColor="@color/design_default_color_secondary_variant"
                 android:textSize="30dp"
@@ -121,21 +130,38 @@
                 android:layout_gravity="center"
                 android:visibility="gone" />
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/updatePatient"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#81FCBD"
+                android:drawableTop="@drawable/ic_baseline_addpa"
                 android:clickable="false"
-                android:text="Update"
+                android:text="Update Patient"
+                android:textColor="#000" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/deletePatient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/red"
+                android:drawableTop="@drawable/ic_baseline_person_remove"
+                android:clickable="false"
+                android:text="Delete Patient"
                 android:textColor="#000" />
 
 
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>

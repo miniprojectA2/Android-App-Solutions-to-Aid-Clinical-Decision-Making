@@ -11,7 +11,11 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.AddPatientFragment;
+import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.DoctorDashboard;
 import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.PatientDashboard;
+import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.PatientsListsFragment;
+import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.UpdateDoctorFragment;
 import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.UpdatePatientFragment;
 import com.miniproject.clinicaldecisionmakingapp.ui.home.HomeFragment;
 import com.miniproject.clinicaldecisionmakingapp.ui.login.LoginFragment;
@@ -95,14 +99,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_login:
                 getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new LoginFragment()).addToBackStack(null).commit();
                 break;
-            case R.id.nav_logout:
-                logout();
-                break;
             case R.id.nav_update:
                 getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new UpdatePatientFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_dashboard:
                 getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new PatientDashboard()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_ddashboard:
+                getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new DoctorDashboard()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_dupdate:
+                getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new UpdateDoctorFragment()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_addpatient:
+                getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new AddPatientFragment()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_showpatients:
+                getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new PatientsListsFragment()).addToBackStack(null).commit();
+                break;
+            case R.id.nav_logout:
+                logout();
                 break;
             default:
                 break;

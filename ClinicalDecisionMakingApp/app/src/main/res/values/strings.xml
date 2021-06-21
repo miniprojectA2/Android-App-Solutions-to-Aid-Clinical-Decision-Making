@@ -13,6 +13,8 @@
     <string name="menu_logout">Logout</string>
     <string name="menu_update">Update</string>
     <string name="menu_dashboard">My Dashboard</string>
+    <string name="menu_addpatient">Add Patient</string>
+    <string name="menu_showpatients">My Patients</string>
 
     <string-array name="spinner_sex">
         <item>--SEX--</item>

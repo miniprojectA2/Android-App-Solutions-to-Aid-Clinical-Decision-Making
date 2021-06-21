@@ -33,4 +33,27 @@
         android:name="com.miniproject.clinicaldecisionmakingapp.ui.dashboard.PatientDashboard"
         android:label="@string/menu_dashboard"
         tools:layout="@layout/fragment_patient_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_dupdate"
+        android:name="com.miniproject.clinicaldecisionmakingapp.ui.dashboard.UpdateDoctorFragment"
+        android:label="@string/menu_update"
+        tools:layout="@layout/fragment_update_doctor" />
+    <fragment
+        android:id="@+id/nav_ddashboard"
+        android:name="com.miniproject.clinicaldecisionmakingapp.ui.dashboard.DoctorDashboard"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_doctor_dashboard" />
+    <fragment
+        android:id="@+id/nav_addpatient"
+        android:name="com.miniproject.clinicaldecisionmakingapp.ui.dashboard.AddPatientFragment"
+        android:label="@string/menu_addpatient"
+        tools:layout="@layout/fragment_add_patient" />
+
+    <fragment
+        android:id="@+id/nav_showpatients"
+        android:name="com.miniproject.clinicaldecisionmakingapp.ui.dashboard.PatientsListsFragment"
+        android:label="@string/menu_showpatients"
+        tools:layout="@layout/fragment_patients_lists" />
+
 </navigation>

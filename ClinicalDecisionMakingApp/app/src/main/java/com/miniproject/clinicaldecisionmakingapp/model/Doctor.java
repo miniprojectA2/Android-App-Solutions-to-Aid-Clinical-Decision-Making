@@ -3,16 +3,23 @@ package com.miniproject.clinicaldecisionmakingapp.model;
 public class Doctor {
     private String doctorName;
     private String doctorAge;
-    private String department;
+    private String doctorDepartment;
     private String doctorEmail;
     private String doctorPhone;
+    private String doctorSex;
+    private String password;
 
-    public Doctor(String doctorName, String doctorAge, String department, String doctorEmail, String doctorPhone) {
+    public Doctor() {
+    }
+
+    public Doctor(String doctorName, String doctorAge, String department, String doctorEmail, String doctorPhone, String password, String doctorSex) {
         this.doctorName = doctorName;
         this.doctorAge = doctorAge;
-        this.department = department;
+        this.doctorDepartment = department;
         this.doctorEmail = doctorEmail;
         this.doctorPhone = doctorPhone;
+        this.password = password;
+        this.doctorSex = doctorSex;
     }
 
     public String getDoctorName() {
@@ -32,11 +39,11 @@ public class Doctor {
     }
 
     public String getDepartment() {
-        return department;
+        return doctorDepartment;
     }
 
     public void setDepartment(String department) {
-        this.department = department;
+        this.doctorDepartment = department;
     }
 
     public String getDoctorEmail() {
@@ -53,5 +60,21 @@ public class Doctor {
 
     public void setDoctorPhone(String doctorPhone) {
         this.doctorPhone = doctorPhone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getDoctorSex() {
+        return doctorSex;
+    }
+
+    public void setDoctorSex(String doctorSex) {
+        this.doctorSex = doctorSex;
     }
 }

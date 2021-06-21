@@ -29,6 +29,26 @@
                 android:visible="false"
                 android:title="@string/menu_update" />
             <item
+                android:id="@+id/nav_ddashboard"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:visible="false"
+                android:title="@string/menu_dashboard" />
+            <item
+                android:id="@+id/nav_dupdate"
+                android:icon="@drawable/ic_baseline_edit"
+                android:visible="false"
+                android:title="@string/menu_update" />
+            <item
+                android:id="@+id/nav_addpatient"
+                android:icon="@drawable/ic_baseline_addpa"
+                android:visible="false"
+                android:title="@string/menu_addpatient" />
+            <item
+                android:id="@+id/nav_showpatients"
+                android:icon="@drawable/ic_baseline_user"
+                android:visible="false"
+                android:title="@string/menu_showpatients" />
+            <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_baseline_logout"
                 android:visible="false"

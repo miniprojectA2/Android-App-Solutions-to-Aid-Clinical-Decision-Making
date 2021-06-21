@@ -26,7 +26,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.miniproject.clinicaldecisionmakingapp.R;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentRegisterBinding;
+import com.miniproject.clinicaldecisionmakingapp.model.Doctor;
 import com.miniproject.clinicaldecisionmakingapp.model.Patient;
+import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.DoctorDashboard;
 import com.miniproject.clinicaldecisionmakingapp.ui.dashboard.PatientDashboard;
 import com.miniproject.clinicaldecisionmakingapp.ui.home.HomeFragment;
 
@@ -70,6 +72,39 @@ public class RegisterFragment extends Fragment implements AdapterView.OnItemSele
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        binding.Patient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.type.setVisibility(View.GONE);
+                binding.patientReg.setVisibility(View.VISIBLE);
+            }
+        });
+
+        binding.Doctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.type.setVisibility(View.GONE);
+                binding.doctorType.setVisibility(View.VISIBLE);
+            }
+        });
+
+        binding.back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.type.setVisibility(View.VISIBLE);
+                binding.patientReg.setVisibility(View.GONE);
+
+            }
+        });
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.type.setVisibility(View.VISIBLE);
+                binding.doctorType.setVisibility(View.GONE);
+            }
+        });
 
         binding.registerPatient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +173,87 @@ public class RegisterFragment extends Fragment implements AdapterView.OnItemSele
 
                                 Toast.makeText(getContext(), "Registered", Toast.LENGTH_SHORT).show();
                                 Fragment fragment = new PatientDashboard();
+                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                                fragmentTransaction.addToBackStack(null);
+                                fragmentTransaction.commit();
+                            }
+                        }
+                    });
+
+                }
+            }
+        });
+
+        binding.registerDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.progressBar2.setVisibility(View.VISIBLE);
+                final String doctorName = binding.doctorName.getText().toString();
+                final String doctorEmail = binding.doctorEmail.getText().toString();
+                final String doctorPhone = binding.phone1.getText().toString();
+                final String doctorAge = binding.doctorAge.getText().toString();
+                final String department = binding.doctorDepartment.getText().toString();
+                final String doctorSex = binding.doctorSex.getSelectedItem().toString();
+                final String doctorPassword = binding.password1.getText().toString();
+
+
+
+                if(doctorName.isEmpty()) {
+                    binding.doctorName.setError("Please enter your name");
+                    binding.doctorName.requestFocus();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(doctorEmail.isEmpty()) {
+                    binding.doctorEmail.setError("Please enter your email");
+                    binding.doctorEmail.requestFocus();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(doctorPhone.isEmpty()) {
+                    binding.phone1.setError("Please enter contact");
+                    binding.phone1.requestFocus();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(doctorAge.isEmpty()) {
+                    binding.doctorAge.setError("Please enter age");
+                    binding.doctorAge.requestFocus();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(doctorPassword.isEmpty()) {
+                    binding.password1.setError("Please enter password");
+                    binding.password1.requestFocus();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(department.isEmpty()) {
+                    binding.doctorDepartment.setError("Please enter your department");
+                    binding.doctorDepartment.requestFocus();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(doctorSex.equals("--SEX--")) {
+                    binding.patientSex.requestFocus();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(doctorName.isEmpty() && doctorEmail.isEmpty() && doctorAge.isEmpty() && doctorPassword.isEmpty() && department.isEmpty() && doctorPhone.isEmpty()) {
+                    Toast.makeText(getContext(), "Fields are Empty!", Toast.LENGTH_SHORT).show();
+                    binding.progressBar2.setVisibility(View.GONE);
+                } else if(!doctorName.isEmpty() && !doctorEmail.isEmpty() && !doctorAge.isEmpty() && !doctorPassword.isEmpty() && !department.isEmpty() && !doctorPhone.isEmpty()) {
+                    firebaseAuth.createUserWithEmailAndPassword(doctorEmail, doctorPassword).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(!task.isSuccessful()) {
+                                binding.progressBar2.setVisibility(View.GONE);
+                                Toast.makeText(getContext(), "User already Exits", Toast.LENGTH_SHORT).show();
+                            } else {
+                                reference = FirebaseDatabase.getInstance().getReference("Doctor");
+                                String key = reference.push().getKey();
+
+                                Doctor doctor = new Doctor();
+                                doctor.setDoctorName(doctorName);
+                                doctor.setDoctorEmail(doctorEmail);
+                                doctor.setDepartment(department);
+                                doctor.setDoctorAge(doctorAge);
+                                doctor.setDoctorSex(doctorSex);
+                                doctor.setDoctorPhone(doctorPhone);
+                                doctor.setPassword(doctorPassword);
+
+                                reference.child(key).setValue(doctor);
+
+                                Toast.makeText(getContext(), "Registered", Toast.LENGTH_SHORT).show();
+                                Fragment fragment = new DoctorDashboard();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment);

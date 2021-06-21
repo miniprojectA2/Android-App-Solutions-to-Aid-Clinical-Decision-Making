@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Patient Login"
+            android:text="Login"
             android:textAlignment="center"
             android:textColor="@color/design_default_color_secondary_variant"
             android:textSize="30dp"
@@ -61,9 +61,20 @@
             android:layout_marginTop="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:background="@color/design_default_color_on_secondary"
-            android:text="Login"
-            android:textColor="@color/cardview_light_background"/>
+            android:background="@color/yellow1"
+            android:text="Login as Patient"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginbutton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/green1"
+            android:text="Login as Doctor"
+            android:textColor="@color/black"/>
 
         <!-- ProgressBar for Loading Time -->
         <ProgressBar
@@ -90,6 +101,7 @@
             android:text="Forgot Password?"
             android:layout_marginTop="40dp"
             android:textAlignment="center"/>
+
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

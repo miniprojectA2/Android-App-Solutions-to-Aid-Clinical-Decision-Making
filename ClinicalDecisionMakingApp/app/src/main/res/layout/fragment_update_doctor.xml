@@ -9,8 +9,9 @@
     tools:context=".ui.dashboard.UpdatePatientFragment"
     android:orientation="horizontal">
 
+
     <ScrollView
-        android:id="@+id/upPatient"
+        android:id="@+id/upDoctor"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -20,7 +21,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textRegister"
+                android:id="@+id/textRegister1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -31,28 +32,28 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input1"
+                android:id="@+id/input2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/patientName"
+                    android:id="@+id/doctorName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Patient Name"
+                    android:hint="Doctor Name"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutEmail"
+                android:id="@+id/textInputLayoutEmail1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/patientEmail"
+                    android:id="@+id/doctorEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
@@ -61,13 +62,13 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutPhone"
+                android:id="@+id/textInputLayoutPhone1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phone"
+                    android:id="@+id/phone1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Phone"
@@ -76,20 +77,20 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Spinner
-                android:id="@+id/patientSex"
+                android:id="@+id/doctorSex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:entries="@array/spinner_sex"></Spinner>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutAge"
+                android:id="@+id/textInputLayoutAge1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/patientAge"
+                    android:id="@+id/doctorAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Age"
@@ -98,31 +99,32 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutWeight"
+                android:id="@+id/textInputLayoutDepartment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/patientWeight"
+                    android:id="@+id/doctorDepartment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Weight"
-                    android:inputType="number"
+                    android:hint="Department"
+                    android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <!-- ProgressBar for Loading Time -->
             <ProgressBar
-                android:id="@+id/progressBar1"
+                android:id="@+id/progressBar2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone" />
 
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/updatePatient"
+                android:id="@+id/updateDoctor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -131,11 +133,8 @@
                 android:clickable="false"
                 android:text="Update"
                 android:textColor="#000" />
-
-
         </LinearLayout>
 
+
     </ScrollView>
-
-
 </LinearLayout>

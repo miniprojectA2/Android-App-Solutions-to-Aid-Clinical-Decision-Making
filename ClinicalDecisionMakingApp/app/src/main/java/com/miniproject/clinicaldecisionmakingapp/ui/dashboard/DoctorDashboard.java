@@ -1,6 +1,15 @@
 package com.miniproject.clinicaldecisionmakingapp.ui.dashboard;
 
-import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.miniproject.clinicaldecisionmakingapp.R;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,17 +33,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.miniproject.clinicaldecisionmakingapp.R;
+import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentDoctorDashboardBinding;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentPatientDashboardBinding;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentRegisterBinding;
 
-public class PatientDashboard extends Fragment {
+public class DoctorDashboard extends Fragment {
 
-    FragmentPatientDashboardBinding binding;
+    FragmentDoctorDashboardBinding binding;
     DatabaseReference reference;
     FirebaseDatabase database;
 
 
-    public PatientDashboard() {
+    public DoctorDashboard() {
     }
 
 
@@ -46,7 +56,7 @@ public class PatientDashboard extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentPatientDashboardBinding.inflate(getLayoutInflater());
+        binding = FragmentDoctorDashboardBinding.inflate(getLayoutInflater());
         View view = inflater.inflate(R.layout.fragment_patient_dashboard, container, false);
         return binding.getRoot();
     }
@@ -55,19 +65,19 @@ public class PatientDashboard extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String patientEmail="";
+        String doctorEmail="";
         if(user != null) {
-            patientEmail = user.getEmail();
+            doctorEmail = user.getEmail();
         }
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("Patient");
+        reference = database.getReference("Doctor");
 
-        showAllDetails(patientEmail);
+        showAllDetails(doctorEmail);
 
-        binding.upatient.setOnClickListener(new View.OnClickListener() {
+        binding.uDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new UpdatePatientFragment();
+                Fragment fragment = new UpdateDoctorFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
@@ -79,31 +89,31 @@ public class PatientDashboard extends Fragment {
     public void showAllDetails(String email) {
         final String[] name = new String[1];
         final String[] age = new String[1];
-        final String[] pemail = new String[1];
+        final String[] demail = new String[1];
         final String[] phone = new String[1];
         final String[] sex = new String[1];
-        final String[] weight = new String[1];
-        reference.orderByChild("patientEmail").equalTo(email).addValueEventListener(new ValueEventListener() {
+        final String[] department = new String[1];
+        reference.orderByChild("doctorEmail").equalTo(email).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot datas : snapshot.getChildren()) {
-                    name[0] = datas.child("patientName").getValue().toString();
-                    age[0] = datas.child("patientAge").getValue().toString();
-                    pemail[0] = datas.child("patientEmail").getValue().toString();
-                    phone[0] = datas.child("patientPhone").getValue().toString();
-                    sex[0] = datas.child("patientSex").getValue().toString();
-                    weight[0] = datas.child("patientWeight").getValue().toString();
+                    name[0] = datas.child("doctorName").getValue().toString();
+                    age[0] = datas.child("doctorAge").getValue().toString();
+                    demail[0] = datas.child("doctorEmail").getValue().toString();
+                    phone[0] = datas.child("doctorPhone").getValue().toString();
+                    sex[0] = datas.child("doctorSex").getValue().toString();
+                    department[0] = datas.child("department").getValue().toString();
                 }
 
                 updateHeader(name[0]);
-                updateNavigationBar();
+                updateNavigationBarDoctor();
 
-                binding.pName.setText(name[0]);
-                binding.pAge.setText("Age: " + age[0]);
-                binding.pEmail.setText("Email: " + email);
-                binding.pSex.setText("Sex: " + sex[0]);
-                binding.pWeight.setText("Weight: " + weight[0]);
-                binding.pPhone.setText("Phone: " + phone[0]);
+                binding.dName.setText(name[0]);
+                binding.dAge.setText("Age: " + age[0]);
+                binding.dEmail.setText("Email: " + email);
+                binding.dSex.setText("Sex: " + sex[0]);
+                binding.dDepartment.setText("Department: " + department[0]);
+                binding.dPhone.setText("Phone: " + phone[0]);
             }
 
             @Override
@@ -120,14 +130,15 @@ public class PatientDashboard extends Fragment {
         username.setText(email);
     }
 
-
-    public void updateNavigationBar() {
+    public void updateNavigationBarDoctor() {
         NavigationView navigationView = (NavigationView)getActivity().findViewById(R.id.nav_view);
         navigationView.getMenu().findItem(R.id.nav_register).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_login).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_home).setVisible(false);
-        navigationView.getMenu().findItem(R.id.nav_update).setVisible(true);
-        navigationView.getMenu().findItem(R.id.nav_dashboard).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_ddashboard).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_dupdate).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_addpatient).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_showpatients).setVisible(true);
         navigationView.getMenu().findItem(R.id.nav_logout).setVisible(true);
 
     }
