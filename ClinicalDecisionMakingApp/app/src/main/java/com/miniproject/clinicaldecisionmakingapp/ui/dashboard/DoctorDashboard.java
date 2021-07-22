@@ -36,6 +36,7 @@ import com.miniproject.clinicaldecisionmakingapp.R;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentDoctorDashboardBinding;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentPatientDashboardBinding;
 import com.miniproject.clinicaldecisionmakingapp.databinding.FragmentRegisterBinding;
+import com.miniproject.clinicaldecisionmakingapp.ui.doctors.CrudPatientFragment;
 
 public class DoctorDashboard extends Fragment {
 
@@ -85,6 +86,31 @@ public class DoctorDashboard extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+        
+        binding.addPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new AddPatientFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        binding.myPatients.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new PatientsListsFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
     }
     public void showAllDetails(String email) {
         final String[] name = new String[1];

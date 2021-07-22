@@ -39,7 +39,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/lightblue"
-                app:hintText="Category 1" />
+                app:hintText="skin and nails " />
 
             <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
                 android:id="@+id/category2"
@@ -47,7 +47,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/lightblue"
-                app:hintText="Category 2" />
+                app:hintText="excretion, and bowel " />
 
             <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
                 android:id="@+id/category3"
@@ -55,7 +55,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/lightblue"
-                app:hintText="Category 3" />
+                app:hintText="stomach" />
 
             <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
                 android:id="@+id/category4"
@@ -63,7 +63,79 @@
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/lightblue"
-                app:hintText="Category 4" />
+                app:hintText="pain " />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="female specific" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="common" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category7"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="other" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category8"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="nose" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category9"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="balance and walking" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category10"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="muscle and bones" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category11"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="swelling " />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category12"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="brain, heart and vein conditions" />
+
+            <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                android:id="@+id/category13"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/lightblue"
+                app:hintText="eyes, throat and mouth " />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/registerPatient"
